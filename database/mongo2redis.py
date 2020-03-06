@@ -42,7 +42,7 @@ raw_input("Press any key to continue...")
 # connect to mongodb
 try: 
     print "\nConnecting to mongo at "+mongo_hostname+":"+str(mongo_port)
-    db_mongo_client = pymongo.MongoClient("mongodb://"+mongo_username+":"+mongo_password+"@"+mongo_hostname+":"+str(mongo_port)+"/")
+    db_mongo_client = pymongo.MongoClient("mongodb://"+mongo_username+":"+mongo_password+"@"+mongo_hostname+":"+str(mongo_port)+"/"+str(mongo_database))
     db_mongo = db_mongo_client[mongo_database]
     print "\tDatabase "+mongo_database+" has "+str(len(db_mongo.list_collection_names()))+" collections"
 except Exception, e:
